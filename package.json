@@ -1,19 +1,27 @@
 {
   "name": "drive-wise",
+  "homepage": "https://drive-wise.ae/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.38",
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "classnames": "^2.3.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "framer-motion": "^10.12.18",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "react-svg-sprite": "^1.0.8",
+    "redux": "^4.2.1",
     "sass": "^1.63.6",
+    "store": "^2.0.12",
+    "swiper": "^10.0.3",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -27,8 +35,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -44,12 +51,19 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^16.18.38",
+    "@types/react-redux": "^7.1.25",
+    "@types/store": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.8"
+    "html-webpack-plugin": "^5.5.3",
+    "prettier": "^2.8.8",
+    "sass-loader": "^13.3.2",
+    "url-loader": "^4.1.1",
+    "webpack-md5-hash": "^0.0.6"
   }
 }
