@@ -16,7 +16,7 @@ const screenWidthSlice = createSlice({
   reducers: {
     setScreenWidth: (state) => {
       const width = window.innerWidth;
-      state.isWidthPC = width >= 1550;
+      state.isWidthPC = width >= 1440;
       state.isNoteBook = width >= 1024;
     },
   },
