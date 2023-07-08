@@ -1,0 +1,59 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.nav {
+  &_list {
+    display: grid;
+
+    @include mixins.onDesktop {
+      display: flex;
+    }
+  }
+
+  &_item {
+    display: flex;
+
+    @include mixins.onDesktop {
+      margin-right: 61px;
+      &:last-child {
+        margin: unset;
+      }
+    }
+
+    @include mixins.on1920 {
+      margin-right: 110px;
+    }
+  }
+
+  &_link {
+    font-size: 16px;
+    line-height: 24px;
+    color: var((--main-text));
+    cursor: pointer;
+    text-decoration: none;
+    padding: 15px 20px;
+
+    @include mixins.onTablet {
+      padding: 15px 40px;
+    }
+
+    @include mixins.onNotebook {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include mixins.onDesktop {
+      padding: unset;
+      font-size: 17px;
+      line-height: 26px;
+    }
+
+    @include mixins.on1920 {
+      font-size: 17px;
+      line-height: 20px;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+}
