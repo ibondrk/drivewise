@@ -1,6 +1,6 @@
 {
-  "name": "drive-wise",
-  "homepage": "https://drive-wise.ae/",
+  "name": "drivewise",
+  "homepage": "https://ibondrk.github.io/drivewise/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
