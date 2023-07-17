@@ -16,6 +16,7 @@ import { setSectionId } from './redux/featcher/section';
 function App() {
   const dispatch = useAppDispatch();
   const { isMenuOpen } = useAppSelector((state) => state.menu);
+  // added comment just to check build
 
   const appRef = useRef<HTMLDivElement | null>(null);
   // const location = useLocation();
