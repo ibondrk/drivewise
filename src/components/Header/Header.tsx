@@ -1,12 +1,16 @@
 import React from 'react';
 import s from './header.module.scss';
-import cn from 'classnames';
+// import cn from 'classnames';
 
 import { HamburgerIcon } from '../HamburgerMenu/icon';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import { useAppSelector } from '../../redux/hooks';
 
 export const Header: React.FC = () => {
-  const location = useLocation();
+  // const location = useLocation();
+
+  const { id } = useAppSelector((state) => state.section);
   return (
     <header className={s.header} id="header">
       <NavLink to={'/'}>
@@ -16,7 +20,7 @@ export const Header: React.FC = () => {
           height="77"
           viewBox="0 0 75 77"
           className={s.logo}
-          fill="none"
+          fill={id === 0 ? '#fff' : '#000'}
         >
           <mask
             id="a"
@@ -75,11 +79,7 @@ export const Header: React.FC = () => {
                   />
                 </mask>
                 <g mask="url(#d)">
-                  <path
-                    // here
-                    fill="#000"
-                    d="m.02 27.452.103 49.16 31.154.066-.103-49.16L.02 27.452Z"
-                  />
+                  <path d="m.02 27.452.103 49.16 31.154.066-.103-49.16L.02 27.452Z" />
                 </g>
               </g>
             </g>
@@ -141,11 +141,7 @@ export const Header: React.FC = () => {
                   />
                 </mask>
                 <g mask="url(#h)">
-                  <path
-                    // here
-                    fill="#000"
-                    d="m47.877 27.506-.02 18.527 26.083-.027.02-18.527-26.083.027Z"
-                  />
+                  <path d="m47.877 27.506-.02 18.527 26.083-.027.02-18.527-26.083.027Z" />
                 </g>
               </g>
             </g>
@@ -207,11 +203,7 @@ export const Header: React.FC = () => {
                   />
                 </mask>
                 <g mask="url(#l)">
-                  <path
-                    // here
-                    fill="#000"
-                    d="m36.797 88.846 50.548-50.548L36.797-12.25l-50.548 50.548 50.548 50.548Z"
-                  />
+                  <path d="m36.797 88.846 50.548-50.548L36.797-12.25l-50.548 50.548 50.548 50.548Z" />
                 </g>
               </g>
             </g>

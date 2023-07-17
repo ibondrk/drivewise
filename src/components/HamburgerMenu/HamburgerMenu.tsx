@@ -3,11 +3,11 @@ import s from './hamburgerMenu.module.scss';
 import cn from 'classnames';
 import { Navigation } from '../Navigation';
 
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import * as menuActions from '../../redux/featcher/menu';
+import { useAppSelector } from '../../redux/hooks';
+// import * as menuActions from '../../redux/featcher/menu';
 
 export const HamburgerMenu: React.FC = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const { isMenuOpen } = useAppSelector((state) => state.menu);
 
   useEffect(() => {
@@ -18,20 +18,20 @@ export const HamburgerMenu: React.FC = () => {
     }
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth > 1440) {
-        dispatch(menuActions.toggleMenu(false));
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const screenWidth = window.innerWidth;
+  //     if (screenWidth > 1440) {
+  //       dispatch(menuActions.toggleMenu(false));
+  //     }
+  //   };
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   return (
     <div className={cn(s.hamburger_menu, { [s.opened]: isMenuOpen })}>

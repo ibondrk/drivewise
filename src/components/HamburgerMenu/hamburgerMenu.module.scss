@@ -16,17 +16,17 @@
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
 
-  @media (min-width: 500px) {
-    width: 50%;
-  }
-
   @include mixins.onTablet {
     padding: 0 0 33px;
-    width: 50%;
+    width: 60%;
   }
 
   @include mixins.onNotebook {
-    width: 391px;
+    width: 50%;
+  }
+
+  @include mixins.onDesktop {
+    width: 40%;
   }
 }
 

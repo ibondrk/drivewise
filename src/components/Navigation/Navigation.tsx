@@ -1,15 +1,17 @@
 import React from 'react';
 import s from './navigation.module.scss';
 import { NavLink, useLocation } from 'react-router-dom';
+import cn from 'classnames';
 
 import * as menuActions from '../../redux/featcher/menu';
 
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 export const Navigation: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const location = useLocation();
+  const { id } = useAppSelector((state) => state.section);
 
   const handleFooterLinkClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -33,10 +35,14 @@ export const Navigation: React.FC = () => {
   return (
     <nav className={s.nav_bar}>
       <ul className={s.nav_list}>
-        <li className={s.nav_item}>
+        <li className={cn(s.nav_item, { [s.currentSection]: id === 0 })}>
           <a
             href="/"
             className={s.nav_link}
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
             onClick={(event) => {
               dispatch(menuActions.toggleMenu(false));
               handleFooterLinkClick(event, 'aboutUs');
@@ -72,6 +78,11 @@ export const Navigation: React.FC = () => {
         <li className={s.nav_item}>
           <NavLink to="/conditions" className={s.nav_link}>
             TERMS & PRIVACY POLICY
+          </NavLink>
+        </li>
+        <li className={s.nav_item}>
+          <NavLink to="/" className={s.nav_link}>
+            COOKIE POLICY
           </NavLink>
         </li>
         <li className={s.nav_item}>

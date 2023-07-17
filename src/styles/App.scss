@@ -1,15 +1,18 @@
 @import url(./_reset.scss);
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&family=Noto+Sans:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans:wght@300;700&display=swap');
 @import url(./_vars.scss);
 @import url(./mixins.scss);
 @import url(./grid.scss);
 
 .App {
-  background-color: var(--theme-background);
-  font-family: 'Montserrat', 'Noto Sans', sans-serif;
+  // background-color: var(--theme-background);
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
   color: var(--main-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .overlay {
