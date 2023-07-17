@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/drivewise/static/css/main.0785f824.css",
+    "main.js": "/drivewise/static/js/main.c6d8b7a5.js",
+    "static/js/787.d3f34515.chunk.js": "/drivewise/static/js/787.d3f34515.chunk.js",
+    "static/media/mainPh_desk.webp": "/drivewise/static/media/mainPh_desk.3410e7727c31f7f4acad.webp",
+    "static/media/mainPh_tab.webp": "/drivewise/static/media/mainPh_tab.1f0aa2ff461a8944bf22.webp",
+    "index.html": "/drivewise/index.html",
+    "main.0785f824.css.map": "/drivewise/static/css/main.0785f824.css.map",
+    "main.c6d8b7a5.js.map": "/drivewise/static/js/main.c6d8b7a5.js.map",
+    "787.d3f34515.chunk.js.map": "/drivewise/static/js/787.d3f34515.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0785f824.css",
+    "static/js/main.c6d8b7a5.js"
+  ]
+}
