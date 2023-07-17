@@ -1,0 +1,46 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  align-items: center;
+
+  padding: 20px 30px 0;
+
+  @include mixins.onTablet {
+    padding: 35px 50px 0;
+  }
+
+  @include mixins.onNotebook {
+    padding: 40px 60px 0;
+  }
+
+  @include mixins.onDesktop {
+    padding: 32x 74px 0;
+  }
+
+  @include mixins.on1920 {
+    //   padding: 27px 100px 0;
+  }
+}
+
+.logo {
+  width: 48px;
+  height: 50px;
+
+  @include mixins.onTablet {
+    width: 65px;
+    height: 68px;
+  }
+
+  @include mixins.onDesktop {
+    width: 75px;
+    height: 77px;
+  }
+
+  @include mixins.on1920 {
+  }
+}
+
+

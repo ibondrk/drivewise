@@ -1,0 +1,59 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.hamburger_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  z-index: 9;
+  // background-color: var(--theme-background);
+  background-color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+
+  @include mixins.onTablet {
+    padding: 0 0 33px;
+    width: 60%;
+  }
+
+  @include mixins.onNotebook {
+    width: 50%;
+  }
+
+  @include mixins.onDesktop {
+    width: 40%;
+  }
+}
+
+.hamburger_menu.opened {
+  transform: translateX(0);
+}
+
+.hamburger_menu.locked {
+  overflow-y: auto;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.menu_header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  background-color: var(--theme-background);
+  z-index: 2;
+  height: 78px;
+
+  @include mixins.onNotebook {
+    height: 123px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+}

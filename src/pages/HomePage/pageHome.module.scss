@@ -1,0 +1,43 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.page {
+  // height: calc(100vh - 73px - 16px);
+  // overflow: scroll hidden;
+  overflow-y: hidden;
+  // overflow-x: scroll;
+  // margin: auto 0;
+
+}
+
+// .progress_container {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+
+//   padding: 0 30px;
+
+//   @include mixins.onTablet {
+//     padding: 0 50px;
+//   }
+//   @include mixins.onNotebook {
+//     padding: 0 60px;
+//   }
+//   @include mixins.onDesktop {
+//     padding: 0 76px;
+//   }
+// }
+
+// .progress_bar {
+//   height: 2px; //should be this height
+//   width: 100%;
+//   background: var(--blue);
+//   transform-origin: 0%;
+// }
+
+// .arrow_left {
+//   margin-right: 15px;
+// }
+
+// .arrow_right {
+//   margin-left: 15px;
+// }

@@ -1,0 +1,40 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.progress_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+
+  @include mixins.onTablet {
+    padding: 0 50px;
+    bottom: 7vh;
+  }
+  @include mixins.onNotebook {
+    padding: 0 60px;
+  }
+  @include mixins.onDesktop {
+    padding: 0 76px;
+  }
+}
+
+.progress_bar {
+  height: 2px; //should be this height
+  width: 100%;
+  background: var(--blue);
+  transform-origin: 0%;
+}
+
+.arrow_left {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.arrow_right {
+  margin-left: 15px;
+  cursor: pointer;
+}

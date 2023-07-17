@@ -1,0 +1,16 @@
+@use './mixins.scss' as mixins;
+
+
+%container {
+  padding: 0 30px;
+
+  @include mixins.onTablet {
+    padding: 0 50px;
+  }
+  @include mixins.onNotebook {
+    padding: 0 60px;
+  }
+  @include mixins.onDesktop {
+    padding: 0 74px;
+  }
+}
