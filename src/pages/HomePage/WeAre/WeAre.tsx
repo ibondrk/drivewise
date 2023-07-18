@@ -2,11 +2,7 @@ import React from 'react';
 import s from './weAre.module.scss';
 import cn from 'classnames';
 
-// import mainPhoto from '';
-
 const mainPhoto = {
-  // smartPhone: require('../../../images/mainPh_mob.webp'),
-  // notebook: require('../../../images/mainPh_note.webp'),
   tablet: require('../../../images/mainPh_tab.webp'),
   desktop: require('../../../images/mainPh_desk.webp'),
 };

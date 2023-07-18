@@ -13,7 +13,7 @@ export const HamburgerIcon: React.FC = () => {
   const iconColor = id === 0 ? '#fff' : '#000';
 
   const insideIconColor =
-    isMenuOpen && iconColor === '#fff' ? '#000' : '#fff' || iconColor;
+    isMenuOpen && iconColor === '#fff' ? '#000' : iconColor;
 
   return (
     <div

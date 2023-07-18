@@ -1,0 +1,16 @@
+// @use '../../../styles/extends' as extend;
+@import '../../../styles/extends';
+
+.section {
+  @extend %container;
+}
+
+.about__title {
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  span {
+    color: var(--nav_blue);
+  }
+}

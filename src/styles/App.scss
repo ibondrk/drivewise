@@ -5,14 +5,13 @@
 @import url(./grid.scss);
 
 .App {
-  // background-color: var(--theme-background);
   background-color: #000;
   font-family: 'Montserrat', sans-serif;
   color: var(--main-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .overlay {
