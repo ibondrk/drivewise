@@ -3,12 +3,32 @@
 .page {
   // height: calc(100vh - 73px - 16px);
   // overflow: scroll hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   // overflow-x: scroll;
   // margin: auto 0;
-
 }
 
+.horizontalScrollContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  // hidding standart browser scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.horizontalScrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontalScrollContainer > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  // min-width: 90vw;
+}
 // .progress_container {
 //   position: relative;
 //   display: flex;
@@ -25,19 +45,4 @@
 //   @include mixins.onDesktop {
 //     padding: 0 76px;
 //   }
-// }
-
-// .progress_bar {
-//   height: 2px; //should be this height
-//   width: 100%;
-//   background: var(--blue);
-//   transform-origin: 0%;
-// }
-
-// .arrow_left {
-//   margin-right: 15px;
-// }
-
-// .arrow_right {
-//   margin-left: 15px;
 // }
