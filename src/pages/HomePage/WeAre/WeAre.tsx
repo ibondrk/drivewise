@@ -43,17 +43,6 @@ export const WeAre: React.FC = () => {
           grow together.
         </p>
       </div>
-
-      {/* <img
-        src={mainPhoto.desktop}
-        className={cn(s.mainPhoto, 'S--1-4', 'T--2-12')}
-        alt="main photo"
-        srcSet={`
-            ${mainPhoto.desktop} 1024w,
-            ${mainPhoto.tablet} 1023w
-          `}
-        sizes="(max-width: 1023px) 489px, (min-width: 1024px) 917px"
-      /> */}
       <img
         className={cn(s.img, 'S--1-4', 'T--2-12')}
         src={mainPhoto.tablet}
