@@ -1,39 +1,48 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
 import s from './about.module.scss';
 import cn from 'classnames';
 
 import { Benefits } from './Benefits';
 
 export const About: React.FC = () => {
+  const [showMoreCorpEstablish, setShowMoreCorpEstablish] = useState(false);
+
   return (
     <section className={s.section} id="About">
-      <h1 className={s.about__title}>
-        About <span>Us</span>
-      </h1>
-      <p className={s.about__descr}>
-        Welcome to our dynamic startup! We are delighted to have you on board.
-        Our team, composed of automotive industry specialists with a decade of
-        experience, is committed to providing you with outstanding products and
-        services tailored to your ever-evolving needs. We take pride in our
-        ability to stay at the forefront of the industry, continuously seeking
-        innovative solutions to elevate your experience. As a wholesaler, we
-        exclusively work with reliable suppliers and customers, ensuring the
-        highest quality in every transaction. Join us in this exciting journey
-        as we redefine the automotive industry together!
-      </p>
-      <h2 className={s.about__value_title}>
-        OUR VALUES <span>&</span> BENEFITS WORKING WITH US
-      </h2>
-      <p className={s.about__value_descr}>
-        Here are the reasons why you should choose to cooperate with our
-        company:
-      </p>
-      {/* here should be scroll component */}
+      <div>
+        <h1 className={s.about__title}>
+          About <span>Us</span>
+        </h1>
+        <p className={s.about__descr}>
+          Welcome to our dynamic startup! We are delighted to have you on board.
+          Our team, composed of automotive industry specialists with a decade of
+          experience, is committed to providing you with outstanding products
+          and services tailored to your ever-evolving needs. We take pride in
+          our ability to stay at the forefront of the industry, continuously
+          seeking innovative solutions to elevate your experience. As a
+          wholesaler, we exclusively work with reliable suppliers and customers,
+          ensuring the highest quality in every transaction. Join us in this
+          exciting journey as we redefine the automotive industry together!
+        </p>
+      </div>
+      <div>
+        <h2 className={s.about__value_title}>
+          OUR VALUES <span>&</span> BENEFITS WORKING WITH US
+        </h2>
+        <p className={s.about__value_descr}>
+          Here are the reasons why you should choose to cooperate with our
+          company:
+        </p>
+      </div>
       <Benefits />
 
       <h3 className={s.about__ceo_title}>CEO</h3>
-      <p className={s.about__ceo_descr}>
+      <p
+        className={cn(s.about__ceo_descr, {
+          [s.opened]: showMoreCorpEstablish,
+        })}
+      >
         Dear valued customers and suppliers, As the CEO of our esteemed company,
         I, Abu Saeed, extend warm greetings and express my sincere appreciation
         for the opportunity to cooperate with you. It is with great pleasure
@@ -65,6 +74,12 @@ export const About: React.FC = () => {
         <br />
         <span>Abu Saeed</span>
       </p>
+      <div
+        className={s.description_btn}
+        onClick={() => setShowMoreCorpEstablish(!showMoreCorpEstablish)}
+      >
+        {!showMoreCorpEstablish ? 'Read more' : 'Hide'}
+      </div>
     </section>
   );
 };
