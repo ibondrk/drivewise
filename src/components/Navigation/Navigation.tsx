@@ -35,7 +35,7 @@ export const Navigation: React.FC = () => {
   return (
     <nav className={s.nav_bar}>
       <ul className={s.nav_list}>
-        <li className={cn(s.nav_item, { [s.currentSection]: id === 0 })}>
+        <li className={cn(s.nav_item, { [s.currentSection]: id === 1 })}>
           <a
             href="/"
             className={s.nav_link}
@@ -51,9 +51,13 @@ export const Navigation: React.FC = () => {
             ABOUT US
           </a>
         </li>
-        <li className={s.nav_item}>
+        <li className={cn(s.nav_item, { [s.currentSection]: id === 2 })}>
           <a
             href="/"
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
             className={s.nav_link}
             onClick={(event) => {
               dispatch(menuActions.toggleMenu(false));
@@ -63,9 +67,13 @@ export const Navigation: React.FC = () => {
             BRANDS
           </a>
         </li>
-        <li className={s.nav_item}>
+        <li className={cn(s.nav_item, { [s.currentSection]: id === 3 })}>
           <a
             href="/"
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
             className={s.nav_link}
             onClick={(event) => {
               dispatch(menuActions.toggleMenu(false));
@@ -76,12 +84,26 @@ export const Navigation: React.FC = () => {
           </a>
         </li>
         <li className={s.nav_item}>
-          <NavLink to="/conditions" className={s.nav_link}>
+          <NavLink
+            to="/conditions"
+            className={s.nav_link}
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
+          >
             TERMS & PRIVACY POLICY
           </NavLink>
         </li>
         <li className={s.nav_item}>
-          <NavLink to="/" className={s.nav_link}>
+          <NavLink
+            to="/"
+            className={s.nav_link}
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
+          >
             COOKIE POLICY
           </NavLink>
         </li>
@@ -89,6 +111,10 @@ export const Navigation: React.FC = () => {
           <a
             href="/"
             className={s.nav_link}
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
             onClick={(event) => {
               dispatch(menuActions.toggleMenu(false));
               handleFooterLinkClick(event, 'contacts');

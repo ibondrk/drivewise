@@ -9,6 +9,7 @@ import { useAppSelector } from '../../redux/hooks';
 export const HamburgerMenu: React.FC = () => {
   // const dispatch = useAppDispatch();
   const { isMenuOpen } = useAppSelector((state) => state.menu);
+  const { id } = useAppSelector((state) => state.section);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -17,6 +18,8 @@ export const HamburgerMenu: React.FC = () => {
       document.body.classList.remove('locked');
     }
   }, [isMenuOpen]);
+
+  const backColor = id === 0 ? '#fff' : '#000';
 
   // useEffect(() => {
   //   const handleResize = () => {
@@ -34,7 +37,10 @@ export const HamburgerMenu: React.FC = () => {
   // }, []);
 
   return (
-    <div className={cn(s.hamburger_menu, { [s.opened]: isMenuOpen })}>
+    <div
+      className={cn(s.hamburger_menu, { [s.opened]: isMenuOpen })}
+      style={{ backgroundColor: backColor }}
+    >
       <div className={s.menu_header}></div>
       <Navigation />
     </div>

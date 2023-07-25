@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './styles/App.scss';
 import cn from 'classnames';
 
@@ -6,7 +6,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import { Header } from './components/Header';
 import { HamburgerMenu } from './components/HamburgerMenu';
-import { ProgressBar } from './components/ProgressBar';
+// import { ProgressBar } from './components/ProgressBar';
 
 import { useAppSelector, useAppDispatch } from './redux/hooks';
 import * as menuActions from './redux/featcher/menu';
@@ -18,7 +18,7 @@ function App() {
   const { isMenuOpen } = useAppSelector((state) => state.menu);
   const { id } = useAppSelector((state) => state.section);
 
-  const appRef = useRef<HTMLDivElement | null>(null);
+  // const appRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     dispatch(setScreenWidth());
@@ -42,7 +42,7 @@ function App() {
     <div
       className={cn('App')}
       style={{ backgroundColor: backColor }}
-      ref={appRef}
+      // ref={appRef}
     >
       <Header />
       <HamburgerMenu />
@@ -53,7 +53,7 @@ function App() {
         }}
       />
       <Outlet />
-      <ProgressBar />
+      {/* <ProgressBar /> */}
     </div>
   );
 }

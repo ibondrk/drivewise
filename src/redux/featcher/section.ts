@@ -12,8 +12,8 @@ const sectionIdSlice = createSlice({
   name: 'section',
   initialState: initialState,
   reducers: {
-    setSectionId: (state, action: PayloadAction<number>) => {
-      state.id = action.payload;
+    setSectionId: (state, action: PayloadAction<sectionId>) => {
+      state.id = action.payload.id;
     },
   },
 });

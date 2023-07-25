@@ -3,14 +3,30 @@
 
 %container {
   padding: 0 30px;
+  width: calc(100vw - 60px);
 
   @include mixins.onTablet {
     padding: 0 50px;
+    width: calc(100vw - 100px);
   }
   @include mixins.onNotebook {
     padding: 0 60px;
+    width: calc(100vw - 120px);
   }
   @include mixins.onDesktop {
     padding: 0 74px;
+    width: calc(100vw - 148px);
+  }
+}
+
+%section-padding {
+  padding-top: 73px;
+
+  @include mixins.onTablet {
+    padding-top: 106px;
+  }
+
+  @include mixins.onNotebook {
+    padding-top: 111px;
   }
 }

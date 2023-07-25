@@ -4,11 +4,12 @@ import s from './pageHome.module.scss';
 import { WeAre } from './WeAre';
 import { About } from './About';
 
+import { ProgressBar } from '../../components/ProgressBar';
+
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { setSectionId } from '../../redux/featcher/section';
 
 export const PageHome: React.FC = () => {
-  // const scrollRef = useRef(null);
   const dispatch = useAppDispatch();
   const { id } = useAppSelector((state) => state.section);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,7 @@ export const PageHome: React.FC = () => {
       const sectionWidth = container.offsetWidth;
 
       const currentSectionIndex = Math.floor(scrollPosition / sectionWidth);
-      dispatch(setSectionId(currentSectionIndex));
+      dispatch(setSectionId({ id: currentSectionIndex }));
     };
 
     const container = containerRef.current;
@@ -40,11 +41,14 @@ export const PageHome: React.FC = () => {
   }, [id]);
 
   return (
-    <div className={s.page}>
-      <div className={s.horizontalScrollContainer} ref={containerRef}>
-        <WeAre />
-        <About />
+    <>
+      <div className={s.page}>
+        <div className={s.horizontalScrollContainer} ref={containerRef}>
+          <WeAre />
+          <About />
+        </div>
+        <ProgressBar containerRef={containerRef} />
       </div>
-    </div>
+    </>
   );
 };

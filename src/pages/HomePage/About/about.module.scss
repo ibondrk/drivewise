@@ -1,16 +1,68 @@
 // @use '../../../styles/extends' as extend;
 @import '../../../styles/extends';
+// @use '../../styles/mixins.scss' as mixins;
 
 .section {
   @extend %container;
+  @extend %section-padding;
+  background-color: white;
+  color: black;
+
+  // position: relative;
+  // height: calc(100vh - 106px - 11vh);
+  // &::after {
+  //   position: fixed;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: -11vh;
+  //   height: 11vh;
+  //   background-color: white;
+  //   content: '';
+  // }
 }
 
 .about__title {
   font-size: 45px;
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 60px;
 
   span {
     color: var(--nav_blue);
+  }
+}
+
+.about__descr,
+.about__value_descr {
+  margin-top: 35px;
+  font-size: 16px;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.about__value_title {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 60px;
+
+  span {
+    color: var(--nav_blue);
+  }
+}
+
+.about__ceo_title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 60px;
+}
+
+.about__ceo_descr {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 300;
+
+  span {
+    font-weight: 500;
   }
 }

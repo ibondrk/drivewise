@@ -1,19 +1,22 @@
 @use '../../../styles/mixins.scss' as mixins;
+@import '../../../styles/extends';
 
 .weAreSection {
+  // @extend %section-padding;
   background-color: black;
   color: white;
   overflow: hidden;
   display: grid;
+  padding-top: 73px;
 
-  height: calc(100vh - 73px);
 
   @include mixins.onTablet {
     height: calc(100vh - 106px);
+    padding-top: 106px;
   }
 
   @include mixins.onNotebook {
-    padding: 0 60px;
+    padding: 111px 60px 0;
   }
 }
 
