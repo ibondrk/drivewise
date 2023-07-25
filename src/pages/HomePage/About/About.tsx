@@ -3,6 +3,8 @@ import React from 'react';
 import s from './about.module.scss';
 import cn from 'classnames';
 
+import { Benefits } from './Benefits';
+
 export const About: React.FC = () => {
   return (
     <section className={s.section} id="About">
@@ -28,6 +30,7 @@ export const About: React.FC = () => {
         company:
       </p>
       {/* here should be scroll component */}
+      <Benefits />
 
       <h3 className={s.about__ceo_title}>CEO</h3>
       <p className={s.about__ceo_descr}>

@@ -18,7 +18,19 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ containerRef }) => {
   const progressBgColor = id !== 0 ? '#000' : '#fff';
 
   return (
-    <div className={s.progress_container}>
+    <div
+      className={s.progress_container}
+      style={
+        id === 1
+          ? {
+              background: '#fff',
+              bottom: 0,
+              paddingBottom: '7vh',
+              paddingTop: '10px',
+            }
+          : {}
+      }
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="31"

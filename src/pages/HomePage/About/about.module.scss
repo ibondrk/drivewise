@@ -1,24 +1,19 @@
 // @use '../../../styles/extends' as extend;
+@use '../../../styles/mixins.scss' as mixins;
 @import '../../../styles/extends';
-// @use '../../styles/mixins.scss' as mixins;
 
 .section {
   @extend %container;
   @extend %section-padding;
   background-color: white;
   color: black;
+  overflow-x: hidden;
 
-  // position: relative;
-  // height: calc(100vh - 106px - 11vh);
-  // &::after {
-  //   position: fixed;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: -11vh;
-  //   height: 11vh;
-  //   background-color: white;
-  //   content: '';
-  // }
+  padding-bottom: 15vh;
+
+  @include mixins.onTablet {
+    padding-bottom: 12vh;
+  }
 }
 
 .about__title {
