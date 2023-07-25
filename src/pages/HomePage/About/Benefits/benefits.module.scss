@@ -1,0 +1,66 @@
+@use '../../../../styles/mixins.scss' as mixins;
+
+.wrapper {
+  display: flex;
+  overflow-y: hidden;
+  margin-top: 35px;
+
+  @include mixins.onTablet {
+    margin-top: 50px;
+  }
+
+  @include mixins.onNotebook {
+    margin-top: 55px;
+  }
+
+  @include mixins.onDesktop {
+    margin-top: 60px;
+  }
+}
+
+.item {
+  padding-bottom: 12px;
+}
+
+.numb {
+  color: var(--nav_blue);
+  font-weight: 700;
+  font-size: 30px;
+
+  @include mixins.onNotebook {
+    font-size: 35px;
+  }
+}
+
+.benefit {
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+
+  min-width: 187px;
+  line-height: 1.2;
+  padding: 24px 60px 0 0;
+  margin-top: 24px;
+
+  @include mixins.onNotebook {
+    padding: 20px 60px 0 0;
+    margin-top: 20px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: -9px;
+    border-radius: 50%;
+    background-color: var(--nav_blue);
+  }
+
+  border-top: 1px solid black;
+
+  &.last {
+    border-top: unset;
+  }
+}
+

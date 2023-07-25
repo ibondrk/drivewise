@@ -8,11 +8,13 @@ import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
 
 export const Header: React.FC = () => {
-  // const location = useLocation();
-
   const { id } = useAppSelector((state) => state.section);
   return (
-    <header className={s.header} id="header">
+    <header
+      className={s.header}
+      id="header"
+      style={id === 1 ? { background: '#fff' } : {}}
+    >
       <NavLink to={'/'}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

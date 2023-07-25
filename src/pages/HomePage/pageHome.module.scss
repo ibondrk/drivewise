@@ -1,11 +1,7 @@
 @use '../../styles/mixins.scss' as mixins;
 
 .page {
-  // height: calc(100vh - 73px - 16px);
-  // overflow: scroll hidden;
   overflow: hidden;
-  // overflow-x: scroll;
-  // margin: auto 0;
 }
 
 .horizontalScrollContainer {
@@ -13,8 +9,7 @@
   flex-direction: row;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  // height: 95vh;
-  // overflow-y: hidden;
+  height: calc(100vh - 1px);
 
   // hidding standart browser scrollbar
   scrollbar-width: thin;
@@ -29,22 +24,5 @@
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
-  // min-width: 90vw;
 }
-// .progress_container {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
 
-//   padding: 0 30px;
-
-//   @include mixins.onTablet {
-//     padding: 0 50px;
-//   }
-//   @include mixins.onNotebook {
-//     padding: 0 60px;
-//   }
-//   @include mixins.onDesktop {
-//     padding: 0 76px;
-//   }
-// }
