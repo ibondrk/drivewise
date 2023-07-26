@@ -1,24 +1,18 @@
-// @use '../../../styles/extends' as extend;
+@use '../../../styles/mixins.scss' as mixins;
 @import '../../../styles/extends';
-// @use '../../styles/mixins.scss' as mixins;
 
 .section {
   @extend %container;
   @extend %section-padding;
   background-color: white;
   color: black;
+  overflow-x: hidden;
 
-  // position: relative;
-  // height: calc(100vh - 106px - 11vh);
-  // &::after {
-  //   position: fixed;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: -11vh;
-  //   height: 11vh;
-  //   background-color: white;
-  //   content: '';
-  // }
+  padding-bottom: 15vh;
+
+  @include mixins.onTablet {
+    padding-bottom: 12vh;
+  }
 }
 
 .about__title {
@@ -29,6 +23,15 @@
 
   span {
     color: var(--nav_blue);
+  }
+
+  @include mixins.onNotebook {
+    margin-top: 80px;
+  }
+
+  @include mixins.onDesktop {
+    font-size: 55px;
+    margin-top: 93px;
   }
 }
 
@@ -64,5 +67,59 @@
 
   span {
     font-weight: 500;
+  }
+
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 212px;
+
+  &.opened {
+    max-height: 1000px;
+
+    &::before {
+      content: unset;
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    background: linear-gradient(0, #fff 50.88%, rgba(0, 0, 0, 0) 112.28%);
+    height: 60px;
+    bottom: -27px;
+    z-index: 2;
+    position: absolute;
+  }
+
+  @include mixins.onTablet {
+    max-height: 250px;
+    &::before {
+      height: 100px;
+      bottom: -49px;
+    }
+  }
+
+  @include mixins.onNotebook {
+    max-height: unset;
+    &::before {
+      content: unset;
+    }
+  }
+}
+
+.description_btn {
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 120%;
+  text-decoration: underline;
+
+  @include mixins.onTablet {
+    margin-top: 30px;
+  }
+
+  @include mixins.onNotebook {
+    display: none;
   }
 }

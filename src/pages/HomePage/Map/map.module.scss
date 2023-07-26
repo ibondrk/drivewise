@@ -1,0 +1,51 @@
+@use '../../../styles/mixins.scss' as mixins;
+@import '../../../styles/extends';
+
+.section {
+  @extend %container;
+  @extend %section-padding;
+  display: grid;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  max-height: 80vh;
+}
+
+.map_title {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 120%;
+
+  margin-top: 60px;
+  grid-row: 1/1;
+
+  @include mixins.onNotebook {
+    margin-top: 70px;
+  }
+
+  @include mixins.onDesktop {
+    font-size: 55px;
+    margin-top: 100px;
+  }
+}
+
+.map {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+
+  height: 200px;
+  grid-row: 1/2;
+
+  @include mixins.onTablet {
+    height: 435px;
+  }
+
+  @include mixins.onNotebook {
+    height: 423px;
+  }
+  @include mixins.onDesktop {
+    height: 500px;
+  }
+}

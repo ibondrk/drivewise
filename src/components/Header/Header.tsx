@@ -8,11 +8,15 @@ import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
 
 export const Header: React.FC = () => {
-  // const location = useLocation();
-
   const { id } = useAppSelector((state) => state.section);
+  // const { isNoteBook } = useAppSelector((state) => state.screenWidth);
+
   return (
-    <header className={s.header} id="header">
+    <header
+      className={s.header}
+      id="header"
+      style={id === 1 ? { background: '#fff' } : {}}
+    >
       <NavLink to={'/'}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +25,7 @@ export const Header: React.FC = () => {
           viewBox="0 0 75 77"
           className={s.logo}
           fill={id === 0 ? '#fff' : '#000'}
+          // fill={id === 0 || id === 2 ? '#fff' : '#000'}
         >
           <mask
             id="a"

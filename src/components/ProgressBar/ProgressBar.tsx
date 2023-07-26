@@ -10,15 +10,29 @@ type ProgressBarProps = {
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({ containerRef }) => {
   const { id } = useAppSelector((state) => state.section);
+  const { isNoteBook } = useAppSelector((state) => state.screenWidth);
 
   const { scrollXProgress } = useScroll({ container: containerRef });
 
   const arrowColor = id === 0 ? '#fff' : '#000';
+  // const arrowColor = id === 0 || (id === 2 && isNoteBook) ? '#fff' : '#000';
 
   const progressBgColor = id !== 0 ? '#000' : '#fff';
 
   return (
-    <div className={s.progress_container}>
+    <div
+      className={s.progress_container}
+      style={
+        id === 1
+          ? {
+              background: '#fff',
+              bottom: 0,
+              paddingBottom: '7vh',
+              paddingTop: '10px',
+            }
+          : {}
+      }
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="31"
@@ -46,7 +60,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ containerRef }) => {
         width="31"
         height="16"
         viewBox="0 0 31 16"
-        fill={arrowColor}
+        fill={id === 0 ? '#fff' : '#000'}
         className={s.arrow_right}
       >
         <path d="M30.7071 8.7071C31.0976 8.31658 31.0976 7.68341 30.7071 7.29289L24.3431 0.92893C23.9526 0.538406 23.3195 0.538406 22.9289 0.92893C22.5384 1.31945 22.5384 1.95262 22.9289 2.34314L28.5858 8L22.9289 13.6569C22.5384 14.0474 22.5384 14.6805 22.9289 15.0711C23.3195 15.4616 23.9526 15.4616 24.3431 15.0711L30.7071 8.7071ZM8.74216e-08 9L30 9L30 7L-8.74216e-08 7L8.74216e-08 9Z" />
