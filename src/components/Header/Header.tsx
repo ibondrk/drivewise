@@ -9,6 +9,8 @@ import { useAppSelector } from '../../redux/hooks';
 
 export const Header: React.FC = () => {
   const { id } = useAppSelector((state) => state.section);
+  // const { isNoteBook } = useAppSelector((state) => state.screenWidth);
+
   return (
     <header
       className={s.header}
@@ -23,6 +25,7 @@ export const Header: React.FC = () => {
           viewBox="0 0 75 77"
           className={s.logo}
           fill={id === 0 ? '#fff' : '#000'}
+          // fill={id === 0 || id === 2 ? '#fff' : '#000'}
         >
           <mask
             id="a"

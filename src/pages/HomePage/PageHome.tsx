@@ -3,6 +3,8 @@ import s from './pageHome.module.scss';
 
 import { WeAre } from './WeAre';
 import { About } from './About';
+import { Map } from './Map';
+import { Brands } from './Brands';
 
 import { ProgressBar } from '../../components/ProgressBar';
 
@@ -36,9 +38,9 @@ export const PageHome: React.FC = () => {
     };
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('section id:', id);
-  }, [id]);
+  // useEffect(() => {
+  //   console.log('section id:', id);
+  // }, [id]);
 
   return (
     <>
@@ -46,6 +48,8 @@ export const PageHome: React.FC = () => {
         <div className={s.horizontalScrollContainer} ref={containerRef}>
           <WeAre />
           <About />
+          {/* <Brands /> */}
+          <Map />
         </div>
         <ProgressBar containerRef={containerRef} />
       </div>
