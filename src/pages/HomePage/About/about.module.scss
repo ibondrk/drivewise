@@ -7,6 +7,7 @@
   background-color: white;
   color: black;
   overflow-x: hidden;
+  // display: grid;
 
   padding-top: 0;
   padding-bottom: 40vh;
@@ -16,42 +17,121 @@
   }
 }
 
-.about__title {
-  font-size: 45px;
-  font-weight: 700;
-  text-transform: uppercase;
+.head_block_wrapper {
+  display: grid;
+  grid-row: 1/1;
   margin-top: 60px;
-
-  span {
-    color: var(--nav_blue);
-  }
 
   @include mixins.onNotebook {
     margin-top: 80px;
   }
 
   @include mixins.onDesktop {
-    font-size: 55px;
     margin-top: 93px;
   }
 }
 
+.title_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about_title_decor_img {
+  display: none;
+
+  @include mixins.onTablet {
+    display: block;
+    transform: translate(-42%, -50%);
+  }
+
+  @include mixins.onNotebook {
+    transform: translate(-42%, 5vh);
+  }
+
+  @include mixins.onDesktop {
+    transform: translate(-50%, 5vh);
+  }
+}
+
+.about__title {
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  span {
+    color: var(--nav_blue);
+  }
+
+  @include mixins.onDesktop {
+    font-size: 55px;
+  }
+}
+
 .about__descr,
-.about__value_descr {
+.value_descr {
   margin-top: 35px;
   font-size: 16px;
   text-align: justify;
   font-weight: 300;
 }
 
-.about__value_title {
+.about__descr {
+  @include mixins.onTablet {
+    margin-top: 0;
+    max-width: 45vw;
+    padding-left: 9vw;
+  }
+  @include mixins.onNotebook {
+    padding-left: 19vw;
+  }
+}
+
+.value_title {
   font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 60px;
 
   span {
     color: var(--nav_blue);
+  }
+}
+
+.second_block_wrapper {
+  display: grid;
+
+  margin-top: 60px;
+
+  @include mixins.onTablet {
+    margin-top: 70px;
+  }
+
+  @include mixins.onNotebook {
+    margin-top: 55px;
+  }
+
+  @include mixins.onDesktop {
+    margin-top: 93px;
+  }
+}
+
+.second_decor_img {
+  display: none;
+
+  @include mixins.onTablet {
+    display: block;
+    transform: translate(100%, -10%);
+
+    @media screen and (min-width: 900px) {
+      // transform: translate(110%, -10%);
+      transform: translate(9vw, -10%);
+    }
+  }
+}
+
+.second_title_wrapper {
+  @include mixins.onTablet {
+    max-width: 47vw;
   }
 }
 
@@ -103,6 +183,7 @@
 
   @include mixins.onNotebook {
     max-height: unset;
+    max-width: 60vw;
     &::before {
       content: unset;
     }
@@ -122,5 +203,28 @@
 
   @include mixins.onNotebook {
     display: none;
+  }
+}
+
+.ceo_descr_wrapper {
+  @include mixins.onNotebook {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.ceo_logo {
+  display: none;
+
+  @include mixins.onNotebook {
+    display: block;
+    height: 222px;
+    width: 213px;
+  }
+
+  @include mixins.onDesktop {
+    width: initial;
+    height: initial;
   }
 }

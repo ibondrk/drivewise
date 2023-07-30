@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 export const Benefits: React.FC = () => {
   return (
-    <div className={s.wrapper}>
+    <div className={cn(s.wrapper)}>
       <div className={s.item}>
         <p className={s.numb}>01</p>
         <p className={s.benefit}>

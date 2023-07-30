@@ -4,6 +4,17 @@
   display: flex;
   overflow-y: hidden;
   margin-top: 35px;
+  height: 200px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nav_blue);
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: #888;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--nav_blue); /* Колір ползунка скролбара */
+  }
 
   @include mixins.onTablet {
     margin-top: 50px;
@@ -16,13 +27,12 @@
   @include mixins.onDesktop {
     margin-top: 60px;
   }
-
-  scrollbar-width: thin;
-  scrollbar-color: var(--nav_blue)
 }
 
 .item {
   padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .numb {
