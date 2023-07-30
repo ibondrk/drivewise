@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './pageHome.module.scss';
 
 import { WeAre } from './WeAre';
@@ -13,8 +13,13 @@ import { setSectionId } from '../../redux/featcher/section';
 
 export const PageHome: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { id } = useAppSelector((state) => state.section);
+  // const { id } = useAppSelector((state) => state.section);
   const containerRef = useRef<HTMLDivElement>(null);
+  // const [activeLink, setActiveLink] = useState('weAre');
+
+  // const [prevPageYOffset, setPrevPageYOffset] = useState(0);
+
+  const sectionIds = ['weAre', 'about', 'brands', 'map'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +44,15 @@ export const PageHome: React.FC = () => {
   }, [dispatch]);
 
   // useEffect(() => {
-  //   console.log('section id:', id);
+  //   console.log('section id:', id, 'active section: ', activeLink);
   // }, [id]);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+    }
+  };
 
   return (
     <>
@@ -48,10 +60,14 @@ export const PageHome: React.FC = () => {
         <div className={s.horizontalScrollContainer} ref={containerRef}>
           <WeAre />
           <About />
-          {/* <Brands /> */}
+          <Brands />
           <Map />
         </div>
-        <ProgressBar containerRef={containerRef} />
+        <ProgressBar
+          containerRef={containerRef}
+          scrollToSection={scrollToSection}
+          sectionIds={sectionIds}
+        />
       </div>
     </>
   );

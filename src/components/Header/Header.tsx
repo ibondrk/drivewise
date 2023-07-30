@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
     <header
       className={s.header}
       id="header"
-      style={id === 1 ? { background: '#fff' } : {}}
+      style={id === 1 ? { background: '#fff', position: 'relative' } : {}}
     >
       <NavLink to={'/'}>
         <svg
@@ -24,8 +24,8 @@ export const Header: React.FC = () => {
           height="77"
           viewBox="0 0 75 77"
           className={s.logo}
-          fill={id === 0 ? '#fff' : '#000'}
-          // fill={id === 0 || id === 2 ? '#fff' : '#000'}
+          // fill={id === 0 ? '#fff' : '#000'}
+          fill={id === 0 || id === 2 ? '#fff' : '#000'}
         >
           <mask
             id="a"

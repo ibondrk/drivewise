@@ -11,11 +11,13 @@ export const HamburgerIcon: React.FC = () => {
   const { id } = useAppSelector((state) => state.section);
   const { isNoteBook } = useAppSelector((state) => state.screenWidth);
 
-  const iconColor = id === 0 ? '#fff' : '#000';
-  // const iconColor = id === 0 || (id === 2 && !isNoteBook) ? '#fff' : '#000';
+  // const iconColor = id === 0 ? '#fff' : '#000';
+  const iconColor = id === 0 || (id === 2 && !isNoteBook) ? '#fff' : '#000';
 
-  const insideIconColor =
+  const initialInsideColor =
     (isMenuOpen && (iconColor === '#fff' ? '#000' : '#fff')) || iconColor;
+
+  const insideIconColor = id === 2 && !isNoteBook ? '#fff' : initialInsideColor;
 
   return (
     <div

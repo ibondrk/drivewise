@@ -5,13 +5,16 @@
   @extend %container;
   @extend %section-padding;
   display: grid;
-  // background-color: white;
   color: black;
   overflow: hidden;
   background-image: linear-gradient(#000000 60%, #ffffff 50%);
 
+  @include mixins.onTablet {
+    background-image: linear-gradient(#000000 55%, #ffffff 50%);
+  }
+
   @include mixins.onNotebook {
-    background-image: linear-gradient(to right,#000000 50%, #ffffff 50%);
+    background-image: linear-gradient(to right, #000000 50%, #ffffff 50%);
   }
 }
 
@@ -21,25 +24,137 @@
   line-height: 120%;
   color: #ffffff;
 
-  margin-top: 60px;
+  margin-top: 40px;
   grid-row: 1/1;
 
   @include mixins.onNotebook {
     margin-top: 70px;
+    grid-row: 1/3;
   }
 
   @include mixins.onDesktop {
     font-size: 55px;
-    margin-top: 100px;
+    margin-top: 60px;
   }
 }
 
 .brand_slide {
-  display: flex !important;
-  align-items: center;
+  display: grid !important;
   justify-content: center;
+  align-items: center;
+}
+
+.swiper_wrapper {
+  grid-row: 4/4;
+  display: flex;
+  align-self: center;
+  justify-items: center;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  @include mixins.onTablet {
+    grid-row: 3/3;
+    // grid-row: 1/4;
+  }
+
+  @include mixins.onNotebook {
+    grid-row: 2/2;
+  }
+}
+
+.swiper_nav {
+  grid-row: 3/3;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 10px;
+
+  @include mixins.onTablet {
+    grid-row: 4/4;
+    margin-top: unset;
+    align-items: center;
+    transform: translate(0, -100%);
+  }
+  
+  @include mixins.onNotebook {
+    align-items: flex-start;
+    grid-row: 3/3;
+    transform: translate(0, -50%);
+  }
+}
+
+.swiper_pagination {
+  grid-row: 2/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 45px;
+  row-gap: 10px;
+  align-items: center;
+
+  overflow-x: auto;
+  white-space: nowrap;
+
+  // hidding standart browser scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mixins.onTablet {
+    overflow-x: initial;
+    white-space: normal;
+  }
+
+  @include mixins.onNotebook {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12vw;
+  }
+
+  @include mixins.onDesktop {
+    column-gap: 18vw;
+  }
+}
+
+.pagination_item {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.dimmed {
+  opacity:.6;
+}
+
+.active {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 40%;
+    left: 0;
+    height: 4px;
+    width: 20px;
+    background-color: var(--nav_blue);
+  }
+}
+
+.swiper_arrow {
+  cursor: pointer;
+  fill: #fff;
+
+  @include mixins.onTablet {
+    fill: #000000;
+  }
 }
 
 .brand_logo {
-  width: fit-content;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
 }

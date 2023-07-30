@@ -9,7 +9,7 @@ export const About: React.FC = () => {
   const [showMoreCorpEstablish, setShowMoreCorpEstablish] = useState(false);
 
   return (
-    <section className={s.section} id="About">
+    <section className={s.section} id="about">
       <div>
         <h1 className={s.about__title}>
           About <span>Us</span>
