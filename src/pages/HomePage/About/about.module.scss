@@ -8,10 +8,11 @@
   color: black;
   overflow-x: hidden;
 
-  padding-bottom: 15vh;
+  padding-top: 0;
+  padding-bottom: 40vh;
 
   @include mixins.onTablet {
-    padding-bottom: 12vh;
+    padding-bottom: 25vh;
   }
 }
 

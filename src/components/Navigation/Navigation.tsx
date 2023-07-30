@@ -45,7 +45,7 @@ export const Navigation: React.FC = () => {
             }}
             onClick={(event) => {
               dispatch(menuActions.toggleMenu(false));
-              handleFooterLinkClick(event, 'aboutUs');
+              handleFooterLinkClick(event, 'about');
             }}
           >
             ABOUT US
@@ -85,7 +85,8 @@ export const Navigation: React.FC = () => {
         </li>
         <li className={s.nav_item}>
           <NavLink
-            to="/conditions"
+            to="/"
+            // to="/conditions"
             className={s.nav_link}
             style={{
               backgroundColor: id === 0 ? '#fff' : '#000',
