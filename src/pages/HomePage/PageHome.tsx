@@ -14,7 +14,7 @@ import { setSectionId } from '../../redux/featcher/section';
 
 export const PageHome: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { id } = useAppSelector((state) => state.section);
+  // const { id } = useAppSelector((state) => state.section);
   const containerRef = useRef<HTMLDivElement>(null);
   // const [activeLink, setActiveLink] = useState('weAre');
 
@@ -44,9 +44,9 @@ export const PageHome: React.FC = () => {
     };
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('section id:', id, 'active section: ');
-  }, [id]);
+  // useEffect(() => {
+  //   console.log('section id:', id, 'active section: ');
+  // }, [id]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
