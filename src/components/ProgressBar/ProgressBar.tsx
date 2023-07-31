@@ -26,7 +26,10 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   };
 
   // const arrowColor = id === 0 ? '#fff' : '#000';
-  const arrowColor = id === 0 || (id === 2 && isNoteBook) ? '#fff' : '#000';
+  const arrowColor =
+    id === 0 || (id === 2 && isNoteBook) || (id === 4 && !isNoteBook)
+      ? '#fff'
+      : '#000';
 
   const progressBgColor = id !== 0 ? '#000' : '#fff';
 
@@ -34,14 +37,20 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     <div
       className={s.progress_container}
       style={
-        id === 1
-          ? {
-              background: '#fff',
-              bottom: 0,
-              paddingBottom: '5vh',
-              paddingTop: '10px',
-            }
-          : {}
+        (id === 1 && {
+          background: '#fff',
+          bottom: 0,
+          paddingBottom: '5vh',
+          paddingTop: '10px',
+        }) ||
+        (id === 4 &&
+          !isNoteBook && {
+            background: '#000',
+            bottom: 0,
+            paddingBottom: '5vh',
+            paddingTop: '10px',
+          }) ||
+        {}
       }
     >
       <svg
@@ -72,7 +81,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         height="16"
         viewBox="0 0 31 16"
         fillOpacity={id === sectionIds.length - 1 ? '0.5' : '1'}
-        fill={id === 0 ? '#fff' : '#000'}
+        fill={id === 0 || id === 4 ? '#fff' : '#000'}
         className={s.arrow_right}
         onClick={() => handleNavClick('forward')}
       >

@@ -32,6 +32,8 @@
 .logo {
   width: 48px;
   height: 50px;
+  position: relative;
+  z-index: 2;
 
   @include mixins.onTablet {
     width: 65px;

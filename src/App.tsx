@@ -17,6 +17,7 @@ function App() {
   const dispatch = useAppDispatch();
   const { isMenuOpen } = useAppSelector((state) => state.menu);
   const { id } = useAppSelector((state) => state.section);
+  const { isNoteBook } = useAppSelector((state) => state.screenWidth);
 
   // const appRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,7 +37,7 @@ function App() {
     };
   }, [dispatch]);
 
-  const backColor = id === 0 ? '#000' : '#fff';
+  const backColor = id === 0 || (id === 4 && !isNoteBook) ? '#000' : '#fff';
 
   return (
     <div

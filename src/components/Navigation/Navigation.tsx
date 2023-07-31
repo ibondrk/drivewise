@@ -83,6 +83,22 @@ export const Navigation: React.FC = () => {
             MAP
           </a>
         </li>
+        <li className={cn(s.nav_item, { [s.currentSection]: id === 4 })}>
+          <a
+            href="/"
+            className={s.nav_link}
+            style={{
+              backgroundColor: id === 0 ? '#fff' : '#000',
+              color: id === 0 ? '#000' : '#fff',
+            }}
+            onClick={(event) => {
+              dispatch(menuActions.toggleMenu(false));
+              handleFooterLinkClick(event, 'contacts');
+            }}
+          >
+            CONTACTS
+          </a>
+        </li>
         <li className={s.nav_item}>
           <NavLink
             to="/"
@@ -107,22 +123,6 @@ export const Navigation: React.FC = () => {
           >
             COOKIE POLICY
           </NavLink>
-        </li>
-        <li className={s.nav_item}>
-          <a
-            href="/"
-            className={s.nav_link}
-            style={{
-              backgroundColor: id === 0 ? '#fff' : '#000',
-              color: id === 0 ? '#000' : '#fff',
-            }}
-            onClick={(event) => {
-              dispatch(menuActions.toggleMenu(false));
-              handleFooterLinkClick(event, 'contacts');
-            }}
-          >
-            CONTACTS
-          </a>
         </li>
       </ul>
     </nav>

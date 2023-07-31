@@ -5,6 +5,7 @@ import { WeAre } from './WeAre';
 import { About } from './About';
 import { Map } from './Map';
 import { Brands } from './Brands';
+import { Contact } from './Contact';
 
 import { ProgressBar } from '../../components/ProgressBar';
 
@@ -13,13 +14,13 @@ import { setSectionId } from '../../redux/featcher/section';
 
 export const PageHome: React.FC = () => {
   const dispatch = useAppDispatch();
-  // const { id } = useAppSelector((state) => state.section);
+  const { id } = useAppSelector((state) => state.section);
   const containerRef = useRef<HTMLDivElement>(null);
   // const [activeLink, setActiveLink] = useState('weAre');
 
   // const [prevPageYOffset, setPrevPageYOffset] = useState(0);
 
-  const sectionIds = ['weAre', 'about', 'brands', 'map'];
+  const sectionIds = ['weAre', 'about', 'brands', 'map', 'contacts'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,9 +44,9 @@ export const PageHome: React.FC = () => {
     };
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   console.log('section id:', id, 'active section: ', activeLink);
-  // }, [id]);
+  useEffect(() => {
+    console.log('section id:', id, 'active section: ');
+  }, [id]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -62,6 +63,7 @@ export const PageHome: React.FC = () => {
           <About />
           <Brands />
           <Map />
+          <Contact />
         </div>
         <ProgressBar
           containerRef={containerRef}

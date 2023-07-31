@@ -6,6 +6,7 @@ import { HamburgerIcon } from '../HamburgerMenu/icon';
 import { NavLink } from 'react-router-dom';
 
 import { useAppSelector } from '../../redux/hooks';
+import { relative } from 'path';
 
 export const Header: React.FC = () => {
   const { id } = useAppSelector((state) => state.section);
@@ -17,7 +18,10 @@ export const Header: React.FC = () => {
       id="header"
       style={id === 1 ? { background: '#fff', position: 'relative' } : {}}
     >
-      <NavLink to={'/'}>
+      <NavLink
+        to={'/'}
+        style={id === 4 ? { position: 'relative', zIndex: 5 } : {}}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="75"
