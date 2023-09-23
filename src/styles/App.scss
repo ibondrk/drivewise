@@ -41,3 +41,19 @@ body {
 body.locked {
   overflow: hidden;
 }
+
+
+// Phone input styles
+.react-tel-input .selected-flag,
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background: transparent !important;
+}
+
+.react-tel-input .country-list .country.highlight {
+  background-color: #242323 !important;
+}
+
+.react-tel-input .form-control {
+  border-radius: 0 !important;
+}
