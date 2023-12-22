@@ -1,4 +1,7 @@
 import * as path from 'path';
+// Додати цей рядок на початок файлу
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// global.Buffer = global.Buffer || require('buffer').Buffer;
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
@@ -71,5 +74,8 @@ module.exports = {
     }),
     new webpack.HashedModuleIdsPlugin(),
     new WebpackMd5Hash(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
+    }),
   ],
 };

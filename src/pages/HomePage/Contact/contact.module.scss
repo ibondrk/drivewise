@@ -31,15 +31,14 @@
   &::before {
     content: '';
     position: absolute;
-    width: 120%;
-    height: 130%;
+    width: 130%;
+    height: 145%;
     background: #fff;
     z-index: 1;
-    transform: translate(-5vw, -12vh);
+    transform: translate(-10vw, -20vh);
 
     @include mixins.onTablet {
       width: 130%;
-      // height: 150%;
       height: 190%;
       transform: translate(-7vw, -20vh);
     }

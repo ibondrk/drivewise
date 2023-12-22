@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import s from './contact.module.scss';
 import cn from 'classnames';
+// import * as functions from 'firebase-functions';
 
 import sprite from '../../../images/sprite.svg';
+// import { getTable } from '../../../api/sheetsAPI';
 
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
 import { phone } from 'phone';
+// const spreadsheetId = functions.config().googlesheet.spreadsheetid;
+
+// console.log(spreadsheetId);
+
+// import { google } from 'googleapis';
+
+// import { dw } from '../../../../.private/drive-wise-6f6c6-ef4e7a8ab21d.json';
+
+// const sheetsClient = new google.auth.JWT({
+//   keyFile: dw,
+//   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+// });
+
+// const sheetsClient = new google.auth.GoogleAuth({
+//   keyFile: '../../../../.private/drive-wise-6f6c6-ef4e7a8ab21d.json',
+//   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+// });
+
+// const sheets = google.sheets({ version: 'v4', auth: sheetsClient });
 
 type CountryData = {
   countryCode: string;
@@ -43,6 +64,9 @@ export const Contact: React.FC = () => {
   const [message, setMessage] = useState('');
   const [messageError, setMessageError] = useState('');
 
+  // useEffect(() => {
+  //   console.log(spreadsheetId);
+  // }, [spreadsheetId]);
   // input change handlers
 
   const NameRegExp = /^[^\d]{0,32}$/;
@@ -115,9 +139,6 @@ export const Contact: React.FC = () => {
       setPhoneNumberError('Phone number incorrect');
       return;
     }
-
-    // setPhoneNumberError('');
-    // return;
   };
 
   const reset = () => {
@@ -171,6 +192,30 @@ export const Contact: React.FC = () => {
       return;
     }
 
+    const userData = [
+      [name, email, phoneNumber, phoneCountry.name, companyName, message],
+    ];
+
+    console.log(userData);
+
+    // sheets.spreadsheets.values.append(
+    //   {
+    //     spreadsheetId,
+    //     range: 'Clients', // Укажите имя листа
+    //     valueInputOption: 'RAW',
+    //     resource: {
+    //       values: userData,
+    //     },
+    //   },
+    //   (err: any, res: any) => {
+    //     if (err) {
+    //       console.error('Произошла ошибка:', err);
+    //     } else {
+    //       console.log('Данные успешно отправлены:', res.data);
+    //     }
+    //   }
+    // );
+
     console.log('form was submitted');
     reset();
   };
@@ -184,7 +229,7 @@ export const Contact: React.FC = () => {
 
         <div className={s.link_qr_wrapper}>
           <div className={s.linkBlock_wrapper}>
-            <div className={s.link_wrapper}>
+            {/* <div className={s.link_wrapper}>
               <svg className={s.mediaLogo} width={24} height={24}>
                 <use xlinkHref={`${sprite}#mail`} />
               </svg>
@@ -196,24 +241,16 @@ export const Contact: React.FC = () => {
               >
                 MariaK@gmail.com
               </a>
-            </div>
-            <div className={s.link_wrapper}>
-              <svg className={s.mediaLogo} width={24} height={24}>
-                <use xlinkHref={`${sprite}#linkedIn`} />
-              </svg>
-              <a href="" className={s.link} target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-            </div>
+            </div> */}
             <div className={s.link_wrapper}>
               <svg className={s.mediaLogo} width={24} height={24}>
                 <use xlinkHref={`${sprite}#map`} />
               </svg>
               <a
-                href="https://goo.gl/maps/8eY6N13fiwdeEGgB8"
+                href="https://maps.app.goo.gl/PygHsEWPU8aqYTcSA"
                 className={s.link}
               >
-                Dubai Digital Park A2, Dubai, UAE
+                Sharjah Publishing City Free Zone, Sharjah, UAE
               </a>
             </div>
           </div>

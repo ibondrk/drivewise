@@ -12,6 +12,8 @@ export const Header: React.FC = () => {
   const { id } = useAppSelector((state) => state.section);
   // const { isNoteBook } = useAppSelector((state) => state.screenWidth);
 
+  // console.log(id);
+
   return (
     <header
       className={s.header}

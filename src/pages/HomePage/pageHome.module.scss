@@ -9,7 +9,7 @@
   flex-direction: row;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  height: calc(100vh - 1px);
+  height: 100vh;
 
   // hidding standart browser scrollbar
   scrollbar-width: thin;
